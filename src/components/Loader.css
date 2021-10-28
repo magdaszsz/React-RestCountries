@@ -1,0 +1,46 @@
+.loader {
+  width: 80%;
+  height: 100vh;
+  margin: 0 auto;
+  display: grid;
+  place-content: center;
+}
+
+
+.loader-navy {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+span {
+  margin: 10px;
+  height: 40px;
+  width: 40px;
+  background: #ED4C67;
+  border-radius: 50%;
+  animation: pulse .6s infinite alternate;
+}
+
+span:nth-of-type(2) {
+  animation-delay: .2s;
+}
+
+span:nth-of-type(3) {
+  animation-delay: .4s;
+}
+
+@keyframes pulse {
+  from {
+    opacity: 1;
+    transform: scale(1);
+    background: #d63031;
+  }
+  to {
+    opacity: .25;
+    transform: scale(.7);
+    background: #ED4C67;
+  }
+}

@@ -1,0 +1,22 @@
+
+
+.card h2, .card p {
+  z-index: 100;
+}
+
+.card-hidden {
+  height: 100%;
+  width: 100%;
+  transform: translateY(100%);
+  transition: all .3s ease;
+  background: rgba(0, 0, 0, .5);
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+
+.card:hover .card-hidden {
+  transform: translateY(0);
+}
