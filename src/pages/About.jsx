@@ -12,7 +12,7 @@ function About() {
     useEffect(() => {
       axios
         .get("https://restcountries.com/v2/all")
-        .then((res) => setCountriesData(res.data));
+        .then((res) => setCountriesData(res.data.slice(0,40)));
     }, []);
 
     const handleClick = () => {
@@ -21,21 +21,20 @@ function About() {
 
 
   return (
-
-  
     <div>
-      <Header/>
+      <Header />
       <Navigation />
       <div className="cards-container">
-        <button onClick={handleClick}>show 5 more</button>
-     {countryData.slice(0, visible).map(country => {
-       return <CountryCard data={country}/>
-     })
-    
-     }
-     </div>
+        {visible < countryData.length && (
+          <button onClick={handleClick}>show 5 more</button>
+        )}
+
+        {countryData.slice(0, visible).map((country) => {
+          return <CountryCard data={country} />;
+        })}
+      </div>
     </div>
-  )
+  );
 }
 
 export default About
